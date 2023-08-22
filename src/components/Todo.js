@@ -23,9 +23,11 @@ function Todo(props) {
         </button>
       </div>
       {modalIsOpen && (
-        <Modal onCancel={handleCloseModal} onConfirm={handleCloseModal} />
+        <>
+          <Modal onCancel={handleCloseModal} onConfirm={handleCloseModal} />
+          <Backdrop onCancel={handleCloseModal} />
+        </>
       )}
-      {modalIsOpen && <Backdrop onCancel={handleCloseModal} />}
     </div>
   );
 }
